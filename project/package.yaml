@@ -2,8 +2,8 @@ name:                project
 version:             0.1.0.0
 github:              "githubuser/project"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
+author:              "Svetlana Cvetic"
+maintainer:          "cvetics@tcd.ie"
 copyright:           "2018 Author name here"
 
 extra-source-files:
