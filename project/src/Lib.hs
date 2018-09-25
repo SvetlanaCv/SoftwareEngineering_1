@@ -4,9 +4,6 @@ module Lib
 
 import Control.Applicative
 
-
-
-
 data BinTree a = Node a (BinTree a) (BinTree a) | Nil deriving (Eq, Show)
 
 lca :: Ord a => a -> a -> BinTree a -> Maybe a
