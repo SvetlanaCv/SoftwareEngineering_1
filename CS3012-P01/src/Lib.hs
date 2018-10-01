@@ -25,3 +25,4 @@ someFunc = do let tree = Node 8 (Node 3 (tip 1) (Node 6 (tip 4) (tip 7)))
               print $ lca 1  4 tree
               print $ lca 1  3 tree
               print $ lca 3  6 tree
+              print $ lca 100 4 tree
