@@ -1,18 +1,19 @@
 module Lib
-    ( lca, Path, someFunc
+    ( lca, Path(..), someFunc, pathList, Id, lcaToString
     ) where
 
 type Id = Int
 data Path = [Id] :# !Int
 
-a :: Path
-a = [4,2,1] :# 5
-b :: Path
-b = [5,3,1] :# 3
+pathList :: [Id] -> Int -> Path
+pathList a b = a :# b
+
+a = pathList [4,2,1] 5
+b = pathList [5,3,1] 3
 
 someFunc :: IO()
 someFunc = do
-      print x where ((x:xs) :# n) = (lca a b)
+      print (lcaToString (lca a b))                      --x where ((x:xs) :# n) = (lca a b)
 
 empty :: Path
 empty = [] :# 0
@@ -26,3 +27,6 @@ lca (xs0 :# i) (ys0 :# j) = go k (drop (i-k) xs0) (drop (j-k) ys0) where
   go n xxs@(x:xs) (y:ys) = case(x) of
                               (y) -> xxs :# n
                               _   -> go (n-1) xs ys
+
+lcaToString :: Path -> [Int]
+lcaToString ((x:xs) :# n) = (x:xs)
