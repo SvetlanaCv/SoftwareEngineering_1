@@ -8,8 +8,8 @@ data Path = [Id] :# !Int
 pathList :: [Id] -> Int -> Path
 pathList a b = a :# b
 
-a = pathList [4,2,1] 5
-b = pathList [5,3,1] 3
+a = pathList [7,6,3,8,9] 5
+b = pathList [10,8,9] 3
 
 someFunc :: IO()
 someFunc = do

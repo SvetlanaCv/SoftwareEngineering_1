@@ -9,7 +9,7 @@ spec = do
   describe "LCA DAG Tests" $ do
 
     it "Test 1 for tree 1" $ do
-       lcaToString ((lca a b)) == [3,2,1] `shouldBe` True
+       lcaToString ((lca a b)) `shouldBe` [8,9]
 
   --  it "Test 2 tree 1" $ do
     --  (lca 4 10 tree4) == Just 8 `shouldBe` True
@@ -24,7 +24,7 @@ spec = do
   --    (lca 3 6 tree4) == Just 3 `shouldBe` True
 
 a :: Path
-a = [3,2,1] :# 3
+a =  [7,6,3,8,9] :# 5
 
 b :: Path
-b = [4,3,2,1] :# 4
+b =  [10,8,9] :# 3
