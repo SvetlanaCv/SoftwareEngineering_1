@@ -21,12 +21,14 @@ empty = [] :# 0
 cons :: Id -> Path -> Path            --adds val to head of list
 cons a (ys :# n) = (a:ys) :# (n + 1)
 
+go :: Int -> [Id] -> [Id] -> Path
+go n xxs@(x:xs) (y:ys) = case(x) of                     --xxs@(X:xs) means xxs is the list, x is head, xs is tail
+                            (y) -> xxs :# n
+                            _   -> go (n-1) xs ys
+
 lca :: Path -> Path -> Path
 lca (xs0 :# i) (ys0 :# j) = go k (drop (i-k) xs0) (drop (j-k) ys0) where
   k = min i j
-  go n xxs@(x:xs) (y:ys) = case(x) of
-                              (y) -> xxs :# n
-                              _   -> go (n-1) xs ys
 
 lcaToString :: Path -> [Int]
 lcaToString ((x:xs) :# n) = (x:xs)
