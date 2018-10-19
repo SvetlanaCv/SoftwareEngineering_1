@@ -8,23 +8,26 @@ spec :: Spec
 spec = do
   describe "LCA DAG Tests" $ do
 
-    it "Test 1 for tree 1" $ do
-       lcaToString ((daglca first second)) `shouldBe` [8,9]
+    it "Test 1" $ do
+       lcaToString ((daglca first second)) `shouldBe` 8
 
-    it "Test 2 tree 1" $ do
-      lcaToString ((daglca a b)) `shouldBe` [3,8]
+    it "Test 2" $ do
+      lcaToString ((daglca a b)) `shouldBe` 3
 
-    it "Test 3 tree 1" $ do
-      lcaToString ((daglca f h)) `shouldBe` [8]
+    it "Test 3" $ do
+      lcaToString ((daglca f h)) `shouldBe` 8
 
-    it "Test 4 tree 1" $ do
-      lcaToString ((daglca b c)) `shouldBe` [6,3,8]
+    it "Test 4" $ do
+      lcaToString ((daglca b c)) `shouldBe` 6
 
-    it "Test 5 tree 1" $ do
-      lcaToString ((daglca i i)) `shouldBe` [13,14,10,8]
+    it "Test 5" $ do
+      lcaToString ((daglca i i)) `shouldBe` 13
 
-    it "Test 5 tree 1" $ do
-      lcaToString ((daglca j d)) `shouldBe` []
+    it "Test 6" $ do
+      lcaToString ((daglca j d)) `shouldBe` 0
+
+    it "Test 7" $ do
+      lcaToString ((daglca i k)) `shouldBe` 0
 
 first = pathList [7,6,3,8,9] 5
 second = pathList [10,8,9] 3

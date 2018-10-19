@@ -26,6 +26,6 @@ daglca (xs0 :# i) (ys0 :# j) = if(xs0 == [] || ys0 == []) then empty else go k (
   k = min i j
   go n xxs@(x:xs) (y:ys) = if (x==y) then xxs :# n else go (n-1) xs ys
 
-lcaToString :: Path -> [Int]
-lcaToString ((x:xs) :# n) = (x:xs)
-lcaToString empty = []
+lcaToString :: Path -> Int
+lcaToString ((x:xs) :# n) = x
+lcaToString empty = 0
