@@ -24,9 +24,6 @@ compareList (x:xs) ys
     | elem x ys = True
     | otherwise  = compareList xs ys
 
-cons :: Id -> Path -> Path            --adds val to head of list
-cons a (ys :# n) = (a:ys) :# (n + 1)
-
 daglca :: Path -> Path -> Path
 daglca (xs0 :# i) (ys0 :# j) = if(xs0 == [] || ys0 == [] || compareList xs0 ys0 == False) then empty else go k (drop (i-k) xs0) (drop (j-k) ys0) where
   k = min i j
